@@ -12,8 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require bootstrap-sprockets
 //= require underscore
 //= require backbone
+//= require backbone-relational
+//= require tilt-jade/runtime
 //= require backbone_keijiban
 //= require_tree ../templates
 //= require_tree ./models

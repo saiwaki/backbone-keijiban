@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :boards, format: :json
+  resources :boards, format: :json do
+    resource :comments, only: [:create, :show]
+  end
 
   root to: 'main#index'
 

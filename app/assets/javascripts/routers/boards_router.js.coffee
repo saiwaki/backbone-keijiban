@@ -1,5 +1,6 @@
 class BackboneKeijiban.Routers.Boards extends Backbone.Router
   routes:
+    ':cid' : 'renderComments'
     '' : 'renderBoards'
 
   initialize: (options) ->
@@ -8,3 +9,6 @@ class BackboneKeijiban.Routers.Boards extends Backbone.Router
 
   renderBoards: ->
     new BackboneKeijiban.Views.BoardsBoard el: @$el, boards: @boards
+
+  renderComments: (id) ->
+    console.log "renderComments"

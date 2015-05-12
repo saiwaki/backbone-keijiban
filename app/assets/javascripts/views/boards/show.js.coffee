@@ -4,6 +4,7 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
   templateEdit: JST['boards/edit']
 
   className: 'list-group-item'
+  tagName: 'a'
 
   events:
     'click [data-js=edit]' : 'edit'
@@ -17,6 +18,7 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
 
   render: ->
     @$el.html @templateShow(board: @board)
+    @$el.attr 'href', '#' + @board.cid
     @
 
   edit: (e) ->

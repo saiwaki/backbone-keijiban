@@ -6,4 +6,5 @@ class BackboneKeijiban.Views.BoardsIndex extends Backbone.View
       @renderBoard(board)
 
   renderBoard: (board) ->
-    console.log board
+    view = new BackboneKeijiban.Views.BoardsShow(board: board)
+    @$el.append view.render().el

@@ -9,4 +9,4 @@ class BackboneKeijiban.Views.BoardsBoard extends Backbone.View
   renderBoards: ->
     @$el.html @template()
     new BackboneKeijiban.Views.BoardsIndex(el: @$('[data-js=index]'), boards: @boards)
-
+    new BackboneKeijiban.Views.BoardsNew(el: @$('[data-js=new]'), boards: @boards)

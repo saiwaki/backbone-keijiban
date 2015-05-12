@@ -7,4 +7,7 @@ class BackboneKeijiban.Views.BoardsNew extends Backbone.View
     'submit' : 'submit'
 
   submit: (e) ->    
-    console.log e
+    e.stopPropagation()
+    e.preventDefault()
+    console.log @$('[data-js=new_name]').val()
+    @$('[data-js=new_name]').val('')

@@ -9,5 +9,12 @@ class BackboneKeijiban.Views.BoardsNew extends Backbone.View
   submit: (e) ->    
     e.stopPropagation()
     e.preventDefault()
-    console.log @$('[data-js=new_name]').val()
+
+    board = new BackboneKeijiban.Models.Board()
+    board.set
+      name: @$('[data-js=new_name]').val()
+
     @$('[data-js=new_name]').val('')
+    board.save {},
+      success: =>
+        @boards.add board

@@ -7,6 +7,7 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
 
   events:
     'click [data-js=edit]' : 'edit'
+    'click [data-js=cancel]' : 'cancel'
 
   initialize: (options) ->
     @board = options.board
@@ -20,3 +21,7 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
     e.stopPropagation()
     @$el.html @templateEdit(board: @board)
 
+  cancel: (e) ->
+    e.preventDefault()
+    e.stopPropagation()
+    @$el.html @templateShow(board: @board)

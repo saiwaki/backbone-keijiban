@@ -11,4 +11,9 @@ class BackboneKeijiban.Routers.Boards extends Backbone.Router
     new BackboneKeijiban.Views.BoardsBoard el: @$el, boards: @boards
 
   renderComments: (id) ->
-    console.log "renderComments"
+    board = @boards.get(id)
+    if board?
+      new BackboneKeijiban.Views.CommentsComment el: @$el, board: board
+    else
+      location.assign '#'
+    

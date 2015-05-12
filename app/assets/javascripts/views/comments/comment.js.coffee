@@ -10,3 +10,4 @@ class BackboneKeijiban.Views.CommentsComment extends Backbone.View
   renderComments: ->
     @$el.html @template board: @board
     new BackboneKeijiban.Views.CommentsIndex el: $('[data-js=index]'), comments: @comments
+    new BackboneKeijiban.Views.CommentsNew el: $('[data-js=new]'), board: @board

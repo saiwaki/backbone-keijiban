@@ -10,3 +10,4 @@ class BackboneKeijiban.Views.CommentsIndex extends Backbone.View
 
   renderComment: (comment) ->
     showView = new BackboneKeijiban.Views.CommentsShow({comment: comment})
+    @$el.append showView.render().el

@@ -4,6 +4,9 @@ class BackboneKeijiban.Views.CommentsIndex extends Backbone.View
     @comments = options.comments
     @renderComments()
 
+    @comments.on 'add', (comment) =>
+      @renderComment(comment)
+
   renderComments: ->
     @comments.each (comment) =>
       @renderComment(comment)

@@ -7,4 +7,4 @@ class BackboneKeijiban.Routers.Boards extends Backbone.Router
     @boards = options.boards
 
   renderBoards: ->
-    console.log "renderBoards"
+    new BackboneKeijiban.Views.BoardsBoard el: @$el, boards: @boards

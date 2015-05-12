@@ -5,4 +5,7 @@ window.BackboneKeijiban =
   Routers: {}
 
 $(document).ready ->
-  
+  boards = new BackboneKeijiban.Collections.Boards()
+  boards.fetch
+    success: ->
+      console.log "success"

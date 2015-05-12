@@ -1,8 +1,10 @@
 class BackboneKeijiban.Views.BoardsBoard extends Backbone.View
 
+  template: JST['boards/board']
+
   initialize: (options) ->
     @boards = options.boards
     @renderBoards()
 
   renderBoards: ->
-    console.log "renderBoards at view"
+    @$el.html @template()

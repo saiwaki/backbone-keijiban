@@ -8,6 +8,7 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
   events:
     'click [data-js=edit]' : 'edit'
     'click [data-js=cancel]' : 'cancel'
+    'click [data-js=done]' : 'done'
 
   initialize: (options) ->
     @board = options.board
@@ -25,3 +26,13 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
     @$el.html @templateShow(board: @board)
+
+  done: (e) ->
+    e.preventDefault()
+    e.stopPropagation()
+    @board.set name: @$('[data-js=edit_name]').val()
+    @$('[data-js=invalid]').val('')
+    @board.save {},
+      success: =>
+        @$el.html @templateShow(board: @board)
+

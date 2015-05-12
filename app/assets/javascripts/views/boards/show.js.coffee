@@ -9,6 +9,7 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
     'click [data-js=edit]' : 'edit'
     'click [data-js=cancel]' : 'cancel'
     'click [data-js=done]' : 'done'
+    'click [data-js=destroy]' : 'destroy'
 
   initialize: (options) ->
     @board = options.board
@@ -36,3 +37,9 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
       success: =>
         @$el.html @templateShow(board: @board)
 
+  destroy: (e) ->
+    e.preventDefault()
+    e.stopPropagation()
+    if window.confirm 'Can I delete it?'
+      @remove()
+      @board.destroy()

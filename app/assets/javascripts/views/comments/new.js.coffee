@@ -12,11 +12,16 @@ class BackboneKeijiban.Views.CommentsNew extends Backbone.View
     e.stopPropagation()
     
     comment = new BackboneKeijiban.Models.Comment()
+
+    @listenTo comment, 'invalid', (model, error) =>
+      @$('[data-js=invalid]').text error
+
     comment.set
       board_id: @board.id
       name: @$('[data-js=new_name]').val()
       content: @$('[data-js=new_content]').val()
 
+    @$('[data-js=invalid]').empty()
     comment.save {},
       success: =>
         @$('[data-js=new_name]').val('名無し')

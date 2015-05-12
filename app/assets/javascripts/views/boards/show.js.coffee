@@ -10,6 +10,7 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
     'click [data-js=cancel]' : 'cancel'
     'click [data-js=done]' : 'done'
     'click [data-js=destroy]' : 'destroy'
+    'click [data-js=edit_name]' : 'prevent'
 
   initialize: (options) ->
     @board = options.board
@@ -43,3 +44,7 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
     if window.confirm 'Can I delete it?'
       @remove()
       @board.destroy()
+
+  prevent: (e) ->
+    e.preventDefault()
+    e.stopPropagation()

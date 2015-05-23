@@ -27,6 +27,7 @@ gem 'backbone-on-rails'
 gem 'backbone-relational-rails'
 gem 'tilt-jade'
 gem 'haml-rails'
+gem 'jquery-ui-rails'
 
 group :test, :development do
   # Unit Test

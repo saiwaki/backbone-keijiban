@@ -9,6 +9,7 @@ class BackboneKeijiban.Views.BoardsNew extends Backbone.View
   submit: (e) ->    
     e.stopPropagation()
     e.preventDefault()
+    $('#dialog').dialog()
 
     board = new BackboneKeijiban.Models.Board()
     @listenTo board, 'invalid', (model, error) =>

@@ -16,9 +16,11 @@ class BackboneKeijiban.Views.BoardsShow extends Backbone.View
   initialize: (options) ->
     @board = options.board
 
+
   render: ->
     @$el.html @templateShow(board: @board)
     @$el.attr 'href', '#' + @board.cid
+    @$el.attr "id", ""
     @
 
   edit: (e) ->

@@ -1,5 +1,7 @@
 h1.text-center Sebone&nbsp;
   span.glyphicon.glyphicon-star
+.ui-widget
+  input.tags(type="text")
 hr
 form.form-horizontal(role='form', data-js='new')
   .form-group
@@ -12,4 +14,5 @@ form.form-horizontal(role='form', data-js='new')
       input.btn.btn-default.pull-right(type='submit', value='保存')
 .row
   .col-sm-offset-2.col-sm-8
-    .list-group(data-js='index')
+    .list-group(data-js='index', id='sortable')
+      input(id='search')

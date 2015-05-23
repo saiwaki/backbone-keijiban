@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/sortable
+//= require jquery-ui/dialog
+//= require jquery-ui/autocomplete
+//= require jquery-ui/effect
+//= require jquery.animsition.min
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require underscore

@@ -22,4 +22,4 @@ class BackboneKeijiban.Views.BoardsIndex extends Backbone.View
   renderList: (boards) ->
     $("a.list-group-item").remove()
     boards.each (board) =>
-      @renderBoard(board)
+      @renderBoard(board) 
